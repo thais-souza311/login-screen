@@ -7,19 +7,26 @@ import {
   TextInput,
   TouchableOpacity,
 } from "react-native";
+
+interface LoginProps{
+    navigation: any;
+}
  
-export default function App() {
+const LoginScreen = (props: LoginProps) => {
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  const SubmitLogin = () => props.navigation.navigate("Home");
  
   return (
     <View style={styles.container}>
-      <Image style={styles.image} source={require("./src/assets/log2.png")} />
+      <Image style={styles.image} source={require("../assets/log2.png")} />
       <View style={styles.inputView}>
         <TextInput
           style={styles.TextInput}
           placeholder="Email"
-          placeholderTextColor="#003f5c"
+          placeholderTextColor="#000000"
           onChangeText={(email) => setEmail(email)}
         />
       </View>
@@ -38,12 +45,14 @@ export default function App() {
         <Text style={styles.forgot_button}>Esqueceu sua senha?</Text>
       </TouchableOpacity>
  
-      <TouchableOpacity style={styles.loginBtn}>
+      <TouchableOpacity style={styles.loginBtn} onPress = {SubmitLogin}>
         <Text style={styles.buttonText}>LOGIN</Text>
       </TouchableOpacity>
     </View>
   );
 }
+
+export default LoginScreen;
  
 const styles = StyleSheet.create({
   container: {
