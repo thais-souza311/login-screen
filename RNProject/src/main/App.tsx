@@ -1,12 +1,15 @@
 import React from 'react';
 import {Provider as PaperProvider} from 'react-native-paper';
 import AppNavigator from '../app/app.navigator';
+import {NativeBaseProvider} from 'native-base';
 
 const App = () => {
   return (
-    <PaperProvider>
-      <AppNavigator />
-    </PaperProvider>
+    <NativeBaseProvider>
+      <PaperProvider>
+        <AppNavigator />
+      </PaperProvider>
+    </NativeBaseProvider>
   );
 };
 

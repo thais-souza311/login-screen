@@ -21,7 +21,7 @@ const LoginScreen = (props: LoginProps) => {
  
   return (
     <View style={styles.container}>
-      <Image style={styles.image} source={require("../assets/log2.png")} />
+      <Image style={styles.image} source={require("../../assets/log2.png")} />
       <View style={styles.inputView}>
         <TextInput
           style={styles.TextInput}
